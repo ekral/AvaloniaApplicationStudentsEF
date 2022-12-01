@@ -1,6 +1,6 @@
 ﻿V projektu používáme Entity Framework, abychom ho mohli používat tak musíme buď vytvořit databází příkazem aplikaci nebo pomocí příkazové řádky. V následujícím textu si ukážeme obě možnosti.
 
-Projekt používá klíčové slovo required z C# 11, potřebujeme mít tedy nainstalovaný minimálně .NET 7.
+Projekt používá klíčové slovo ```required``` z C# 11, potřebujeme mít tedy nainstalovaný minimálně .NET 7.
 
 Návod pro Entity Framework: [Getting Started with EF Core](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli)
 
@@ -65,4 +65,4 @@ dotnet ef database update
 ---
 Poznámka
 
-Na školních počítačích použijte v terminálu příkaz $env:Path = "D:\dotnet;C:\Users\ekral\.dotnet\tools" kde změňte uživatelské jméno a případně cestu k souboru dotnet.exe.
+Na školních počítačích použijte v terminálu příkaz ```$env:Path = "D:\dotnet;C:\Users\ekral\.dotnet\tools"``` kde změňte uživatelské jméno a případně cestu k souboru dotnet.exe.
