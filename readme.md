@@ -2,7 +2,7 @@
 
 1. Použijte v projektu IoC container.
 
-## Popis projektu
+# Popis projektu
 
 V projektu používáme Entity Framework, abychom ho mohli používat tak musíme buď vytvořit databází příkazem aplikaci nebo pomocí příkazové řádky. V následujícím textu si ukážeme obě možnosti.
 
