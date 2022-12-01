@@ -1,4 +1,10 @@
-﻿V projektu používáme Entity Framework, abychom ho mohli používat tak musíme buď vytvořit databází příkazem aplikaci nebo pomocí příkazové řádky. V následujícím textu si ukážeme obě možnosti.
+﻿## Úkoly
+
+1. Použijte v projektu IoC container.
+
+## Popis projektu
+
+V projektu používáme Entity Framework, abychom ho mohli používat tak musíme buď vytvořit databází příkazem aplikaci nebo pomocí příkazové řádky. V následujícím textu si ukážeme obě možnosti.
 
 Projekt používá klíčové slovo ```required``` z C# 11, potřebujeme mít tedy nainstalovaný minimálně .NET 7.
 
