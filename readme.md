@@ -2,33 +2,6 @@
 
 1. Použijte v projektu IoC container.
 
-# Popis projektu
-
-V projektu používáme Entity Framework, abychom ho mohli používat tak musíme buď vytvořit databází příkazem aplikaci nebo pomocí příkazové řádky. V následujícím textu si ukážeme obě možnosti.
-
-Projekt používá klíčové slovo ```required``` z C# 11, potřebujeme mít tedy nainstalovaný minimálně .NET 7.
-
-Návod pro Entity Framework: [Getting Started with EF Core](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli)
-
-Budeme používat následující příkazy pro příkazovou řádku:
-- Příkaz ```dotnet add packgage``` stáhne nuget balíček z repozitáře nuget.org a přidá ho do projektu.
-- Příkaz ```dotnet tool install```, který instaluje nové příkazy pro příkazovou řádku.
-- Příkaz ```dotnet ef``` pomocí kterého vytváříme například nové migrace nebo aktualizujeme databázi.
-
-## Entity Framework Provider
-
-Pokud chceme používat konkrétní databázi s Entity Frameworkem, tak musím do projektu přidat providera pro tuto databázi. Provider je většinou knihovna distriovaná jako nuget balíček. Následující příkaz nainstaluje nuget balíček, konrétně EF database provider pro databázi Sqlite. 
-
-```powershell
-dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-```
-
-Bez použití migrací můžeme vytvořit databází pomocí metody *EnsureCreated() nebo EnsureCreatedAsync()*.
-
-```csharp
-await using SkolaContext db = new SkolaContext();
-bool created = await db.Database.EnsureCreatedAsync();
-```
 Dokumentace: [Dependency inversion]([https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles#dependency-inversion))
 
 ## IoC Container
@@ -141,6 +114,34 @@ public class StudentListViewModel
       this.databaseService = databaseService;
   }
 }
+```
+
+# Popis projektu
+
+V projektu používáme Entity Framework, abychom ho mohli používat tak musíme buď vytvořit databází příkazem aplikaci nebo pomocí příkazové řádky. V následujícím textu si ukážeme obě možnosti.
+
+Projekt používá klíčové slovo ```required``` z C# 11, potřebujeme mít tedy nainstalovaný minimálně .NET 7.
+
+Návod pro Entity Framework: [Getting Started with EF Core](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli)
+
+Budeme používat následující příkazy pro příkazovou řádku:
+- Příkaz ```dotnet add packgage``` stáhne nuget balíček z repozitáře nuget.org a přidá ho do projektu.
+- Příkaz ```dotnet tool install```, který instaluje nové příkazy pro příkazovou řádku.
+- Příkaz ```dotnet ef``` pomocí kterého vytváříme například nové migrace nebo aktualizujeme databázi.
+
+## Entity Framework Provider
+
+Pokud chceme používat konkrétní databázi s Entity Frameworkem, tak musím do projektu přidat providera pro tuto databázi. Provider je většinou knihovna distriovaná jako nuget balíček. Následující příkaz nainstaluje nuget balíček, konrétně EF database provider pro databázi Sqlite. 
+
+```powershell
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+```
+
+Bez použití migrací můžeme vytvořit databází pomocí metody *EnsureCreated() nebo EnsureCreatedAsync()*.
+
+```csharp
+await using SkolaContext db = new SkolaContext();
+bool created = await db.Database.EnsureCreatedAsync();
 ```
 
 ## Migrace
